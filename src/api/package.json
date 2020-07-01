@@ -1,0 +1,9 @@
+{
+  "name": "ajaxapi",
+  "version": "1.0.0",
+  "description": "Hypixel API for LFG ",
+  "main": "server.js",
+  "author": "Lajna",
+  "license": "MIT",
+  "private": true
+}
