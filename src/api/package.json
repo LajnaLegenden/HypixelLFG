@@ -1,9 +1,19 @@
 {
-  "name": "ajaxapi",
-  "version": "1.0.0",
-  "description": "Hypixel API for LFG ",
-  "main": "server.js",
-  "author": "Lajna",
-  "license": "MIT",
-  "private": true
+    "name": "ajaxapi",
+    "version": "1.0.0",
+    "description": "Hypixel API for LFG ",
+    "main": "server.js",
+    "author": "Lajna",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "express": "",
+        "moment": "^2.27.0",
+        "momentjs": "^2.0.0",
+        "mongoose": "^5.9.21",
+        "winston": "^3.3.3"
+    },
+    "scripts": {
+        "start-dev": "nodemon src/server.js"
+    }
 }

@@ -1,0 +1,27 @@
+version: '3.4'
+services:
+  api:
+      build: ./src/api
+      command: sh -c "/root/api/scripts/install-deps.sh && nodemon server.js"
+      environment:
+        - NODE_ENV=development
+        - PORT=3000
+      ports:
+        - '1323:3000'
+      working_dir: /root/api/src
+      volumes:
+        - ./src/api:/root/api
+        - ./data/api:/data
+      depends_on:
+        - "mongodb"
+  mongodb:
+    image: mongo:latest
+    working_dir: /
+    hostname: mongodb
+    restart: "no"
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongoData:/data/db
+volumes:
+  mongoData: {}
