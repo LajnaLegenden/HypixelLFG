@@ -1,6 +1,7 @@
 const winston = require('winston');
 const moment = require('moment')
 
+
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.prettyPrint(),
@@ -14,4 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
         format: winston.format.simple(),
     }));
 }
+
+logger.info("Logger initialized")
+
 module.exports = logger
