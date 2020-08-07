@@ -22,5 +22,7 @@
                 </div>
             </li>
         </ul>
+        <a *ngIf="!user" href="http://localhost:1323/"><img class="navbar-brand" src="/assets/images/loginWithDiscord.png" height="40px"></a>
+        <a *ngIf="user" class="navbar-brand">{{user.username}}#{{user.discriminator}}</a>
     </div>
 </nav>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiService) { }
+
+  user: any = undefined;
 
   ngOnInit(): void {
+    this.getLoggedinUser()
   }
+
+
+  async getLoggedinUser(){
+    this.user = await this.api.getLoggedInUser();
+    console.log(this)
+  }
+  
 
 }
