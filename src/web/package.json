@@ -24,7 +24,7 @@
         "@angular/service-worker": "~9.1.4",
         "@ng-bootstrap/ng-bootstrap": "^6.1.0",
         "@types/axios": "^0.14.0",
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "bootstrap": "^4.4.0",
         "lodash": "^4.17.19",
         "rxjs": "~6.5.4",
