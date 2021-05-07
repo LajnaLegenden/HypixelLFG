@@ -7,6 +7,7 @@
     "license": "MIT",
     "private": true,
     "dependencies": {
+        "body-parser": "^1.19.0",
         "cookie-session": "^1.4.0",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
@@ -17,6 +18,9 @@
         "momentjs": "^2.0.0",
         "mongoose": "^5.9.24",
         "node-fetch": "^2.6.1",
+        "mongoose-extend-schema": "^1.0.0",
+        "mongoose-schema-extend": "^0.2.2",
+        "node-fetch": "^2.6.0",
         "winston": "^3.3.3"
     },
     "scripts": {

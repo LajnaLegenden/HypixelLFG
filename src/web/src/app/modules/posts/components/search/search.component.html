@@ -1,0 +1,77 @@
+<div *ngIf="game == 'MINECRAFT_BEDWARS'" class="main">
+    <form id="searchForm" (submit)="onSearch($event)">
+        <input type="hidden" name="game" value="MINECRAFT_BEDWARS">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="inputState">Min ⭐</label>
+                <select name="minStar" id="inputState" class="form-control">
+              <option value="-1" selected>Any</option>
+              <option *ngFor="let i of starRange" [value]="i">{{i}} ⭐</option>
+            </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputState">Max ⭐</label>
+                <select name="maxStar" id="inputState" class="form-control">
+              <option value="-1" selected>Any</option>
+              <option *ngFor="let i of starRange" [value]="i">{{i}} ⭐</option>
+            </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputState">Mic Required?</label>
+                <select name="micRequired" id="inputState" class="form-control">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputState">Gamemode</label>
+                <select name="gamemode" id="inputState" class="form-control">
+              <option value="2">Doubles</option>
+              <option value="3">3v3v3v3</option>
+              <option value="4">4v4v4v4</option>
+            </select>
+            </div>
+        </div>
+        <button name="submit" type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+
+<div *ngIf="game == 'MINECRAFT_SKYWARS'" class="main">
+    <form id="searchForm" (submit)="onSearch($event)">
+        <input type="hidden" name="game" value="MINECRAFT_SKYWARS">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="inputState">Min ⭐</label>
+                <select name="minStar" id="inputState" class="form-control">
+              <option value="-1" selected>Any</option>
+              <option *ngFor="let i of starRange" [value]="i">{{i}} ⭐</option>
+            </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputState">Max ⭐</label>
+                <select name="maxStar" id="inputState" class="form-control">
+              <option value="-1" selected>Any</option>
+              <option *ngFor="let i of starRange" [value]="i">{{i}} ⭐</option>
+            </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputState">Mic Required?</label>
+                <select name="micRequired" id="inputState" class="form-control">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputState">Gamemode</label>
+                <select name="gamemode" id="inputState" class="form-control">
+              <option value="2">Doubles</option>
+              <option value="3">3v3v3v3</option>
+              <option value="4">4v4v4v4</option>
+            </select>
+            </div>
+        </div>
+        <button name="submit" type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <button (click)="createPost()">CreatePost</button>
+</div>

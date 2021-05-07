@@ -1,4 +1,4 @@
-import { PostsCoreComponent } from './modules/posts/components/posts-core.component';
+import { PostsCoreComponent } from './modules/posts/components/post-core/posts-core.component';
 import { HomeComponent } from './modules/home/components/core/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';

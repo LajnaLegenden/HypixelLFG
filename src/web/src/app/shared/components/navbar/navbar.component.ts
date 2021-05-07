@@ -13,14 +13,13 @@ export class NavbarComponent implements OnInit {
   user: any = undefined;
 
   ngOnInit(): void {
-    this.getLoggedinUser()
+    this.getLoggedinUser();
   }
 
 
   async getLoggedinUser(){
     this.user = await this.api.getLoggedInUser();
-    console.log(this)
   }
-  
+
 
 }

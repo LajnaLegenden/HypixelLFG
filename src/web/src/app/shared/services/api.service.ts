@@ -18,9 +18,17 @@ export class ApiService {
   }
 
   // Private methods
-  private async getApi(url) {
+  private async getApi(url, options = undefined) {
     try {
-      return await call.get(url);
+      return await call.get(url, options);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  private async postApi(url, data) {
+    try {
+      return await call.post(url, data, { headers: { "Content-Type": "application/json" } });
     } catch (e) {
       console.log(e);
     }
@@ -28,9 +36,22 @@ export class ApiService {
 
 
   // Public methods
-  
+
   public async getLoggedInUser() {
     const res = await this.getApi("/me");
+    return _.get(await res, "data", undefined);
+  }
+
+  public async createPost(data) {
+    try {
+      return await this.postApi('/createPost', data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  public async getPosts(options) {
+    const res = await this.getApi("/posts/getPosts", { params: options });
     return _.get(await res, "data", undefined);
   }
 }

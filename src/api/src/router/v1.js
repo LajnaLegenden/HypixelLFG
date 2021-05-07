@@ -3,6 +3,7 @@ const router = require('express').Router()
 const Discord = require('./../modules/discordOAuth')
 const User = require('./../modules/schema/User')
 const _ = require('lodash')
+const Minecraft = require('./../modules/MinecraftManager')
 
 
 //DiscordLogin
@@ -36,6 +37,35 @@ router.get('/me', async(req, res) => {
 router.get('/logout', async(req, res) => {
     req.session.user = undefined
 });
+
+router.get('/posts/getPosts', async(req, res) => {
+    switch (_.get(req.query, "game").split("_")[0]) {
+        case "MINECRAFT":
+            res.send(await Minecraft.getPosts(req.query));
+            break;
+
+        default:
+            res.send(new Array())
+            break;
+    }
+})
+
+
+router.post('/createPost', async(req, res) => {
+    if (_.has(req.body, "game")) {
+        switch (_.get(req.body, "game").split("_")[0]) {
+            case "MINECRAFT":
+                res.send(await Minecraft.createPost(req.body))
+                break;
+            case "SKYWARS":
+
+                break;
+            default:
+                res.status(402).send({ message: "Unknown game" })
+                break;
+        }
+    }
+})
 
 
 module.exports = router;
