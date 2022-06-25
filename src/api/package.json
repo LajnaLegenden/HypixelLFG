@@ -20,7 +20,7 @@
         "node-fetch": "^2.6.1",
         "mongoose-extend-schema": "^1.0.0",
         "mongoose-schema-extend": "^0.2.2",
-        "node-fetch": "^2.6.0",
+        "node-fetch": "^2.6.7",
         "winston": "^3.3.3"
     },
     "scripts": {
